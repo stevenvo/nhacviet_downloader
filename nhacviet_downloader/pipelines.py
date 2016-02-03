@@ -20,11 +20,11 @@ except ImportError:
 class NhacvietDownloaderPipeline(FilesPipeline):
 
     def get_media_requests(self, item, info):
-        print "1-HELLLLLLOOOOOOOO"
+        # print "1-HELLLLLLOOOOOOOO"
         return Request(item["file_url"], meta={'title': item["title"]})
         
     def file_downloaded(self, response, request, info):
-        print "2-HELLLLLLOOOOOOOO"
+        # print "2-HELLLLLLOOOOOOOO"
         path = self.file_path(request, response=response, info=info)        
         buf = BytesIO(response.body)
         # print response.meta['title']
