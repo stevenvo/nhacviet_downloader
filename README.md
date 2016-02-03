@@ -1,5 +1,7 @@
 # Nhac Viet Crawler
 
+[![Demo Video](http://img.youtube.com/vi/T7GCLgPfwE/0.jpg)](https://www.youtube.com/watch?v=-T7GCLgPfwE)
+
 ## Why I created this
 
 1. I want to listen to Viet music from my phone while driving
