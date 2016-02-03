@@ -16,4 +16,5 @@ class NhacvietDownloaderItem(scrapy.Item):
 class NhacsoNetItem(scrapy.Item):
     title = scrapy.Field()
     file_url = scrapy.Field()
+    referer_url = scrapy.Field()
     pass

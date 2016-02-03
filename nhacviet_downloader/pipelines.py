@@ -21,7 +21,11 @@ class NhacvietDownloaderPipeline(FilesPipeline):
 
     def get_media_requests(self, item, info):
         # print "1-HELLLLLLOOOOOOOO"
-        return Request(item["file_url"], meta={'title': item["title"]})
+        return Request(item["file_url"], meta={'title': item["title"]}, 
+            headers={
+                'Referer':item['referer_url'],
+                'X-Requested-With': 'XMLHttpRequest'
+            })
         
     def file_downloaded(self, response, request, info):
         # print "2-HELLLLLLOOOOOOOO"

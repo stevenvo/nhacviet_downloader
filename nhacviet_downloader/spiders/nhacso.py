@@ -40,6 +40,7 @@ class NhacsoSpider(scrapy.Spider):
             song["title"] = title
             search = re.search(p, partial_url)
             song["file_url"] = "http://nhacso.net/songs/download-song?songId={}".format(search.group(1))
+            song["referer_url"] = response.url
             yield song
             
         # p = re.compile(ur'downSong\(\'(.*?)\'\)')
