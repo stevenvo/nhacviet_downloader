@@ -10,5 +10,10 @@ import scrapy
 
 class NhacvietDownloaderItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
+    pass
+
+
+class NhacsoNetItem(scrapy.Item):
+    title = scrapy.Field()
+    file_url = scrapy.Field()
     pass

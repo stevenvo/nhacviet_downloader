@@ -14,6 +14,7 @@ BOT_NAME = 'nhacviet_downloader'
 SPIDER_MODULES = ['nhacviet_downloader.spiders']
 NEWSPIDER_MODULE = 'nhacviet_downloader.spiders'
 
+DOWNLOAD_HANDLERS = {'s3': None}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'nhacviet_downloader (+http://www.yourdomain.com)'
@@ -61,9 +62,13 @@ NEWSPIDER_MODULE = 'nhacviet_downloader.spiders'
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'nhacviet_downloader.pipelines.SomePipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'nhacviet_downloader.pipelines.NhacvietDownloaderPipeline':10
+   # 'nhacviet_downloader.pipelines.SomePipeline': 300,
+   # 'scrapy.pipelines.files.FilesPipeline': 1
+}
+
+FILES_STORE = './downloaded-mp3-files'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

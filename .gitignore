@@ -1,2 +1,4 @@
 .DSStore
-.pyc
+*.pyc
+.mov
+.mp3
