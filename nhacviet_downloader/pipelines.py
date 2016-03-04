@@ -33,7 +33,7 @@ class NhacvietDownloaderPipeline(FilesPipeline):
         buf = BytesIO(response.body)
         # print response.meta['title']
         # print "{0}.mp3".format()
-        fname = "{0}.mp3".format(response.meta['title'].encode('utf-8'))
+        fname = "{0}.mp3".format(response.meta['title'].encode('utf-8').strip())
         self.store.persist_file(fname, buf, info)
         # self.store.persist_file(path, buf, info)
         checksum = md5sum(buf)
